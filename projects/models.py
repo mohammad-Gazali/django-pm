@@ -28,7 +28,7 @@ class Project(models.Model):
     status = models.IntegerField(choices=ProjectStatus.choices, default=ProjectStatus.PENDING)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     # the model AUTH_USER_MODEL is exist by default in django
-    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE) 
+    user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True) 
 
     def __str__(self):
         return self.title
