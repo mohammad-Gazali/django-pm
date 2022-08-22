@@ -9,6 +9,15 @@ from .forms import ProjectCreateForm, ProjectUpdateForm
 class ProjectListView(ListView):
     model = Project
     template_name = 'project/list.html'
+    paginate_by = 6  # this attribute determines the number of this object in one page 
+
+    def get_queryset(self):
+        query_set = super().get_queryset()
+        where = {}
+        q = self.request.GET.get('q', None)
+        if q:
+            where['title__icontains'] = q
+        return query_set.filter(**where)
 
 
 class ProjectCreateView(CreateView):
