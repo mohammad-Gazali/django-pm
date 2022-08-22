@@ -30,8 +30,6 @@ class ProjectDeleteView(DeleteView):
     model = Project
     template_name = 'project/delete.html'
     success_url = reverse_lazy('Project_list')
-    context_object_name = 'project'
-
 
 class TaskCreateView(CreateView):
     model = Task
