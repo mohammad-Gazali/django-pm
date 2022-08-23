@@ -12,17 +12,35 @@
               <a class="nav-link active" aria-current="page" href="{% url 'Project_list' %}">{% trans "Home" %}</a>
             </li>
           </ul>
-          <form action="{% url 'Project_list' %}" class="d-flex" method="GET">
-            <div class="input-group">
-              <input type="text" 
-                     name="q" 
-                     class="form-control" 
-                     placeholder="{% trans "Search" %}"
-                     value = {{ request.GET.q }}  {# this attribute is for saving the text inside search input after clicking the search icon (notice: the word after GET is the name of the input which is 'q' here) #}
-                     >
-              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-            </div>
-          </form>
+          {% if user.is_authenticated %}  {# this tag means that if the user is authenticated #}
+            <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ user.username }} {# the username of user :) #}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">{% trans "Profile" %}</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form action="{% url 'Project_list' %}" class="d-flex" method="GET">
+              <div class="input-group">
+                <input type="text" 
+                      name="q" 
+                      class="form-control" 
+                      placeholder="{% trans "Search" %}"
+                      value = {{ request.GET.q }}  {# this attribute is for saving the text inside search input after clicking the search icon (notice: the word after GET is the name of the input which is 'q' here) #}
+                      >
+                <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+              </div>
+            </form>
+          {% else %}
+            <a href="{% url 'login' %}" class="btn btn-outline-light">
+              {% trans "Login" %}
+            </a>
+          {% endif %}
         </div>
       </div>
     </nav>
