@@ -19,7 +19,7 @@
                   {{ user.username }} {# the username of user :) #}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">{% trans "Profile" %}</a></li>
+                  <li><a class="dropdown-item" href="{% url 'profile' %}">{% trans "Profile" %}</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
                 </ul>
@@ -37,6 +37,9 @@
               </div>
             </form>
           {% else %}
+            <a href="{% url 'register' %}" class="btn btn-outline-light me-2">
+              {% trans "Register" %}
+            </a>
             <a href="{% url 'login' %}" class="btn btn-outline-light">
               {% trans "Login" %}
             </a>
