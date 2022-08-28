@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf.global_settings import AUTH_USER_MODEL
+from django.utils.translation import gettext as _
 
 # Create your models here.
 
@@ -15,10 +16,10 @@ class ProjectStatus(models.IntegerChoices):
     # -the name of attribute we will use it in the code
     # -the number we will use it in the database
     # -the string we will display it to the user
-    PENDING = 1, 'Pending'
-    COMPLETED = 2, 'Completed'
-    POSTPONED = 3, 'Postponed'
-    CANCELED = 4, 'Canceld'
+    PENDING = 1, _('Pending')
+    COMPLETED = 2, _('Completed')
+    POSTPONED = 3, _('Postponed')
+    CANCELED = 4, _('Canceld')
 
 class Project(models.Model):
     title = models.CharField(max_length=255)
