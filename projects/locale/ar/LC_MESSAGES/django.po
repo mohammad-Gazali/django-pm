@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-28 23:39+0300\n"
+"POT-Creation-Date: 2022-08-29 14:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\projects\forms.py:12 .\projects\forms.py:28
+#: .\projects\forms.py:12 .\projects\forms.py:28 .\projects\models.py:14
 msgid "Category"
 msgstr "التصنيف"
 
@@ -35,21 +35,47 @@ msgstr "الوصف"
 msgid "Status"
 msgstr "الحالة"
 
-#: .\projects\models.py:19
+#: .\projects\models.py:15
+
+msgid "Categorys"
+msgstr "التصنيفات"
+
+#: .\projects\models.py:23
 msgid "Pending"
 msgstr "قيد التنفيذ"
 
-#: .\projects\models.py:20
+#: .\projects\models.py:24
 msgid "Completed"
 msgstr "مكتمل"
 
-#: .\projects\models.py:21
+#: .\projects\models.py:25
 msgid "Postponed"
 msgstr "مؤجل"
 
-#: .\projects\models.py:22
+#: .\projects\models.py:26
 msgid "Canceld"
 msgstr "ملغى"
+
+#: .\projects\models.py:42
+#, fuzzy
+#| msgid "New Project"
+msgid "Project"
+msgstr "مشروع"
+
+#: .\projects\models.py:43
+
+msgid "Projects"
+msgstr "مشاريع"
+
+#: .\projects\models.py:55
+
+msgid "Task"
+msgstr "مهمة"
+
+#: .\projects\models.py:56
+
+msgid "Tasks"
+msgstr "مهمات"
 
 #: .\projects\templates\partials\footer.html:5
 msgid "(c) 2022 Gazali. All rights reserved"

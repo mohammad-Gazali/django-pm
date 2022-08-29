@@ -10,6 +10,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta: 
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categorys')
+
 
 # this class is an auxiliary class for status attribue in 'Project' model
 class ProjectStatus(models.IntegerChoices):
@@ -34,6 +38,10 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta: 
+        verbose_name = _('Project')
+        verbose_name_plural = _('Projects')
+
 
 class Task(models.Model):
     description = models.TextField()
@@ -42,4 +50,8 @@ class Task(models.Model):
 
     def __str__(self):
         return self.description
+
+    class Meta: 
+        verbose_name = _('Task')
+        verbose_name_plural = _('Tasks')
     
