@@ -1,0 +1,5 @@
+we can determine the LOGIN_REDIRECT_URL and LOGOUT_REDIRECT_URL in settings like this:
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/accounts/login'
